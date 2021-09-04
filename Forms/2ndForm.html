@@ -9,7 +9,7 @@
         <div class="flex-container">
             <h3>Property Address:</h3>
             <label class="centerLabel">Full Address: Street, City, State, Zip</label>
-            <forms><input type="text" placeholder="Enter Property Address" class="flex-item" id="propertyAddress" disabled></forms>
+            <forms><input type="text" placeholder="Enter Property Address" class="flex-item" id="propertyAddress"></forms>
             <div id="propertyAddressRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="propertyAddressText" placeholder="Rejection Reason"></textarea>
@@ -33,13 +33,13 @@
             <label class="leftLabel">Select an option</label>
             <forms class="offerButtons">
                 <label class="radioButton" id="radioWholesaler">
-                    <input type="radio" id="wholesaler" style="margin: 10px" name="Buyer" disabled>Wholesaler
+                    <input type="radio" id="wholesaler" style="margin: 10px" name="Buyer" >Wholesaler
                 </label>
                 <label class="radioButton" id="radioAgent">
-                    <input type="radio" id="agent" style="margin: 10px" name="Buyer" disabled>Agent
+                    <input type="radio" id="agent" style="margin: 10px" name="Buyer" >Agent
                 </label>
                 <label class="radioButton" id="radioInvestor">
-                    <input type="radio" id="investor" style="margin: 10px" name="Buyer" disabled>Investor
+                    <input type="radio" id="investor" style="margin: 10px" name="Buyer" >Investor
                     </label>
             </forms>
             <div id="buyerRejection" style="display: none;">
@@ -65,10 +65,10 @@
             <label class="centerLabel">Are we double closing?</label>
             <forms class="offerButtons">
                 <label class="radioButton" id="radioEscrowYes">
-                    <input type="radio" style="margin: 10px;" name="escrow" id="escrowYes" disabled>Yes
+                    <input type="radio" style="margin: 10px;" name="escrow" id="escrowYes" >Yes
                 </label>
                 <label class="radioButton" id="radioEscrowNo">
-                    <input type="radio" style="margin: 10px" name="escrow" id="escrowNo" disabled>No
+                    <input type="radio" style="margin: 10px" name="escrow" id="escrowNo" >No
                 <label>
             </forms>
             <div id="escrowRejection" style="display: none;">
@@ -92,7 +92,7 @@
         <div class="flex-container">
             <h3>Title Company/Attorney:</h3>
             <label class="leftLabel">Type a description</label>
-            <forms><input type="text" class="flex-item" id="titleComp" disabled></forms>
+            <forms><input type="text" class="flex-item" id="titleComp" ></forms>
             <div id="titleCompanyRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="titleCompanyText" placeholder="Rejection Reason"></textarea>
@@ -114,7 +114,7 @@
         <div class="flex-container">
             <h3>Title Officer's Name:</h3>
             <label class="leftLabel">Type a description</label>
-            <forms><input type="text" class="flex-item" id="titleOfficer" disabled></forms>
+            <forms><input type="text" class="flex-item" id="titleOfficer" ></forms>
             <div id="titleOfficerNameRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="titleOfficerNameText" placeholder="Rejection Reason"></textarea>
@@ -136,7 +136,7 @@
         <div id="emailBox" class="flex-container">
             <h3>Title Company Email:</h3>
             <label class="leftLabel">Type a description</label>
-            <forms><input type="text" placeholder="example@example.com" class="flex-item" id="titleEmail" disabled></forms>
+            <forms><input type="text" placeholder="example@example.com" class="flex-item" id="titleEmail" ></forms>
             <div id="titleCompanyEmailRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="titleCompanyEmailText" placeholder="Rejection Reason"></textarea>
@@ -159,7 +159,7 @@
             <h3>Title Company's Phone Number:</h3>
             <label class="leftLabel">Type a description</label>
             <forms style="margin-bottom: 0%; margin-top: 1%">
-                <forms><input type="text" class="flex-item" placeholder="(123)-456-7890" id="compNum" disabled></forms>
+                <forms><input type="text" class="flex-item" placeholder="(123)-456-7890" id="compNum" ></forms>
             </forms>
             <div id="titleCompanyNumberRejection" style="display: none;">
                 <div class="rejectionBox">
@@ -182,7 +182,7 @@
         <div class="flex-container">
             <h3>Signer's Name:</h3>
             <label class="centerLabel">Name of the buyer signing the contract</label>
-            <forms><input type="text" class="flex-item" id="signerName" disabled></forms>
+            <forms><input type="text" class="flex-item" id="signerName" ></forms>
             <div id="signerNameRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="signerNameText" placeholder="Rejection Reason"></textarea>
@@ -204,7 +204,7 @@
         <div class="flex-container">
             <h3>Vesting:</h3>
             <label class="centerLabel">Name of the person or company who is buying the property</label>
-            <forms><input type="text" class="flex-item" id="vester" disabled></forms>
+            <forms><input type="text" class="flex-item" id="vester" ></forms>
             <div id="vestingRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="vestingText" placeholder="Rejection Reason"></textarea>
@@ -226,7 +226,7 @@
         <div class="flex-container">
             <h3>Contract Price:</h3>
             <label class="centerLabel">The price buyer is purchasing at</label>
-            <forms><input type="text" class="flex-item" id="contractPrice" value="$" disabled></forms>
+            <forms><input type="text" class="flex-item" id="contractPrice" value="$" ></forms>
             <div id="contractPriceRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="contractPriceText" placeholder="Rejection Reason"></textarea>
@@ -248,7 +248,7 @@
         <div class="flex-container">
             <h3>EMD:</h3>
             <label class="centerLabel">Earnest Money Deposit Account</label>
-            <forms><input type="text" class="flex-item" id="EMD" value="$" disabled></forms>
+            <forms><input type="text" class="flex-item" id="EMD" value="$" ></forms>
             <div id="EMDRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="EMDText" placeholder="Rejection Reason"></textarea>
@@ -272,10 +272,10 @@
             <label class="leftLabel">Choose an option</label>
             <forms class="offerButtons">
                 <label class="radioButton" id="radioPayingClosingYes">
-                    <input type="radio" style="margin: 10px;" name="closing" id="closeYes" disabled>Yes
+                    <input type="radio" style="margin: 10px;" name="closing" id="closeYes" >Yes
                 </label>
                 <label class="radioButton" id="radioPayingClosingNo">
-                    <input type="radio" style="margin: 10px" name="closing" id="closeNo" disabled> No
+                    <input type="radio" style="margin: 10px" name="closing" id="closeNo" > No
                 </label>
             </forms>
             <div id="payingClosingRejection" style="display: none;">
@@ -299,7 +299,7 @@
         <div class="flex-container">
             <h3>Close of Escrow:</h3>
             <label class="leftLabel">Type a description</label>
-            <forms><input type="date" id="closeEscrow" disabled></forms> <br>
+            <forms><input type="date" id="closeEscrow" ></forms> <br>
             <div id="closeEscrowRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="closeEscrowText" placeholder="Rejection Reason"></textarea>
@@ -323,10 +323,10 @@
             <label class="leftLabel">Choose an option</label>
             <forms class="offerButtons">
                 <label class="radioButton" id="radioCloseSoonerYes">
-                    <input type="radio" style="margin: 10px;" name="sooner" id="closeSoonerYes" disabled> Yes
+                    <input type="radio" style="margin: 10px;" name="sooner" id="closeSoonerYes" > Yes
                 </label>
                 <label class="radioButton" id="radioCloseSoonerNo">
-                    <input type="radio" style="margin: 10px" name="sooner" id="closeSoonerNo" disabled> No
+                    <input type="radio" style="margin: 10px" name="sooner" id="closeSoonerNo" > No
                 </label>
             </forms>
             <div id="closeSoonerRejection" style="display: none;">
@@ -350,7 +350,7 @@
         <div class="flex-container">
             <h3>Contract Executed Date:</h3>
             <label class="centerLabel">Today's Date</label>
-            <forms><input type="date" id="exeEscrow" disabled></forms> <br>
+            <forms><input type="date" id="exeEscrow" ></forms> <br>
             <div id="executeEscrowRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="executeEscrowText" placeholder="Rejection Reason"></textarea>
@@ -373,7 +373,7 @@
             <h3>Buyer's Phone Number:</h3>
             <label class="leftLabel">Type a description</label>
             <forms style="margin-bottom: 0%; margin-top: 1%">
-                <forms><input type="text" class="flex-item" placeholder="(123)-456-7890" maxlength="16" id="buyNum" disabled></forms>
+                <forms><input type="text" class="flex-item" placeholder="(123)-456-7890" maxlength="16" id="buyNum" ></forms>
             </forms>
             <div id="buyerNumberRejection" style="display: none;">
                 <div class="rejectionBox">
@@ -396,7 +396,7 @@
         <div class="flex-container">
             <h3>Docusign Email:</h3>
             <label class="centerLabel">Email for buyer/signer</label>
-            <forms><input type="text" id="docusign" placeholder="example@example.com" class="flex-item" disabled></forms>
+            <forms><input type="text" id="docusign" placeholder="example@example.com" class="flex-item" ></forms>
             <div id="docusignRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="docusignText" placeholder="Rejection Reason"></textarea>
@@ -418,7 +418,7 @@
         <div class="flex-container">
             <h3>Your Name:</h3>
             <label class="leftLabel">Type a description</label>
-            <forms><input type="text" class="flex-item" id="username" disabled></forms>
+            <forms><input type="text" class="flex-item" id="username" ></forms>
             <div id="usernameRejection" style="display: none;">
                 <div class="rejectionBox">
                     <textarea id="usernameText" placeholder="Rejection Reason"></textarea>
