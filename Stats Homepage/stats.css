@@ -1,0 +1,293 @@
+/*css for the autoblast title above the table*/
+.blast {
+    text-decoration: underline;
+    margin-right: 10%;
+}
+
+/*css for the date that appears next to the autoblast*/
+.date {
+    text-decoration: underline;
+    margin-left: 10%;
+}
+
+.burger {
+    display: none;
+}
+
+/*This changes the nav bar to burger menu when it shrinks*/
+@media only screen and (max-width: 768px) {
+    #market {
+        display: none;
+    }
+
+    #form {
+        display: none;
+    }
+
+    .navItem {
+        display: none;
+    }
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/*navigation bar css*/
+.navigation {
+    display: flex;
+    list-style-type: none;
+    background-color: black;
+    overflow: hidden;
+    align-items: center;
+}
+
+/*css for each separate item in the nav bar*/
+.navItem {
+    float:left;
+    padding: 2% 1% 2% 1%;
+    position: relative;
+}
+
+/*css for when an option in the navbar is hovered over*/
+.navItem:hover, .login:hover{
+    cursor: pointer;
+    background-color: rgb(0, 136, 136);
+}
+
+/*to format the text in the navbar*/
+.navItem a {
+    color: white;
+    position: relative;
+}
+
+/*general css for the Trinity title and Log In button*/
+.navigationTitle {
+    display: flex;
+    align-items: center;
+}
+
+/*css for the Log In link*/
+.login {
+    color: white;
+    text-decoration: none;
+    padding: 6% 3% 6% 3%;
+}
+
+/*css for the hoverable dropdown menu*/
+.dropdown {
+    float: left;
+    overflow: hidden;
+    padding: 2% 1% 2% 1%;
+    width: 12%;
+  }
+
+  /*css for the actual drop down button*/
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/*changes the color of the navbar contents, dropdown button, and dropbutton when hovered*/
+.navbar a:hover, .dropdown:hover .dropbtn, .dropdown:hover {
+    background-color: rgb(0, 136, 136);
+}
+
+/*css for the dropdown menu options*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: gray;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/*css for the contents in each menu option*/
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/*modifies the look of the dropdown menu choices when hovered over*/
+.dropdown-content a:hover {
+    background-color: rgb(0, 150, 150);
+}
+
+/*displays the hidden dropdown menu content*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*css for the popup window background that grays everything else out*/
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*css that makes the actual popup window*/
+.popupContent {
+    background-color: white;
+    margin: auto;
+    padding: 1% 1% 1% 1%;
+    border: 1px solid black;
+    width: 25%;
+}
+
+/*css for the top bar of the popup, the "Emails" title and the X*/
+.popupTop {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0%;
+}
+
+/*simply changes the cursor to the appropriate pointer when hovering the closing X*/
+span:hover {
+    cursor: pointer;
+}
+
+/*css for the four table headers*/
+.tableTitles {
+    border-bottom: 0.5pt solid gray;
+    padding: 0% 25% 1% 25%;
+}
+
+/*css for the percentages in the table*/
+.percentage {
+    text-decoration: none;
+}
+
+/*css for the number actually occurred (beneath the percentage)*/
+.actualNum {
+    font-size: smaller;
+    margin-top: 5%;
+}
+
+/*css for logo*/
+.logo {
+    border-radius: 5%;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5%;
+    margin-left: 0.5%;
+    margin-right: 15%;
+}
+
+/*footer contents*/
+.foot {
+    color: white;
+    text-decoration: none;
+    padding-right: 5%;
+    white-space: nowrap;
+}
+
+/*footer social media icon list*/
+.socialList {
+    display: flex; 
+    flex-direction: row;     
+    height: 100%;
+    padding-left: 0%;
+}
+
+/*footer list individuals*/
+.socialList li {
+    list-style: none;
+}
+
+/*footer social media icons*/
+.socialList li a {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display:block;
+    text-align:center;
+    margin:0 10px;
+    border-radius: 50%;
+    padding: 6px;
+    box-sizing: border-box;
+    text-decoration:none;
+    background: linear-gradient(0deg, #ddd, #fff);
+    transition: .5s;
+}
+
+.socialList li a:hover {
+    box-shadow: 0px 0px 10px 7px #2ca1db;
+    text-decoration:none;
+}
+
+/*social media icons themselves*/
+.socialList li a .fa {
+    width: 100%;
+    height: 100%;
+    display:block;
+    background: linear-gradient(0deg, #fff, #ddd);
+    border-radius: 50%;
+    line-height: calc(60px - 12px);
+    font-size:24px;
+    color: #262626;
+    transition: .5s;
+}
+
+/*first icon*/
+.socialList li:nth-child(1) a:hover .fa {
+    color: #e4405f;
+}
+
+/*first icon*/
+.socialList li:nth-child(2) a:hover .fa {
+    color: #4267B2;
+}
+
+/*third icon*/
+.socialList li:nth-child(3) a:hover .fa {
+    color: #1DA1F2;
+}
+
+/*helps format Trinity title*/
+h1 {
+    display: inline-block;
+}
+
+/*aligns the table rows*/
+tr {
+    display: flex;
+}
+
+/*css for the table contents*/
+th {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(139, 219, 219, 0.603);
+    border: 0.5pt solid lightgray;
+    width: 25%;
+    padding: 1% 5% 1% 5%;
+}
+
+/*css for the footer*/
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    background-color: black;
+    bottom: 0%;
+    width: 99%;
+}
