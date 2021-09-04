@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SendGrid Stats</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stats.css">
+        <!--the link to get the down caret for the dropdown-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body style="background-color: rgb(238, 238, 238);">
+        <ul class="navigation">
+            <!--the dropdown menu with all the available markets-->
+            <div class="dropdown" id="market">
+                <li class="dropbtn"><a>Markets<i class="fa fa-caret-down"></i></a></li>
+                <div class="dropdown-content">
+                    <a id="atlanta" href="#">Atlanta</a>
+                    <a id="birmingham" href="#">Birmingham</a>
+                    <a id="charlotte" href="#">Charlotte</a>
+                    <a id="columbus" href="#">Columbus</a>
+                    <a id="dallas" href="#">Dallas</a>
+                    <a id="houston" href="#">Houston</a>
+                    <a id="kansasCity" href="#">Kansas City</a>
+                    <a id="lasVegas" href="#">Las Vegas</a>
+                    <a id="memphis" href="#">Memphis</a>
+                    <a id="northernAZ" href="#">Northern AZ</a>
+                    <a id="sanAntonio" href="#">San Antonio</a>
+                    <a id="stLouis" href="#">St. Louis</a>
+                    <a id="tucson" href="#">Tucson</a>
+                </div>
+            </div>
+            <li class="navItem"><a>Close</a></li>
+            <li class="navItem"><a>Podio</a></li>
+            <li class="navItem"><a>Map</a></li>
+            <div class="dropdown" id="form">
+                <li class="dropbtn"><a>Forms <i class="fa fa-caret-down"></i></a></li>
+                <div class="dropdown-content">
+                    <a href="#">Acquisition</a>
+                    <a href="#">Disposition</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <li class="dropbtn" style="display: flex; justify-content: center; align-items: center;"><a class="burger"><i class="fa fa-bars"></i></a></li>
+                <div class="dropdown-content">
+                    <a href="#">Market</a>
+                    <a href="#">Close</a>
+                    <a href="#">Podio</a>
+                    <a href="#">Map</a>
+                    <a href="#">Forms</a>
+                </div>
+            </div>
+            <li style="width: 100%; text-align: right; margin-right: 12%;"><h1><i style="color: white;">Trinity</i></h1></li>
+            <!--directs to the login html page, no escape from login yet-->
+            <li style="width: 100%; text-align: right; margin-right: 3%;"><a href="login.html" class="login">Log In</a></li>
+        </ul> 
+        <!--id for the market is "market" for easier javascript implementation-->
+        <h3 style="border-bottom: 1pt solid gray; text-align: center;"><i id="market">Atlanta</i><i> Market Statistics</i></h3>
+        <div style="border-bottom: 1pt solid gray;">
+            <div style="display: flex; justify-content: center">
+                <h3 class="blast"><i id="autoBlast">auto blast</i></h3>
+                <h3 class="date"><i id="displayDate">Date: 2021-01-01</i></h3>
+            </div>
+            <!--all variables (percentages and numbers) are given an id-->
+            <table style="width: 100%">
+                <tr class="statBox">
+                    <th>
+                        <i class="tableTitles">Delivered</i><br>
+                        <a class="percentage" id="deliveredP">92.11%</a>
+                        <a class="actualNum" id="deliveredN">379,602</a>
+                    </th>
+                    <th>
+                        <i class="tableTitles">Unique Clicks</i><br>
+                        <a href="#" class="percentage" id="uniqueClicksP" style="color: rgb(86, 86, 250);">1.44%</a>
+                        <a class="actualNum" id="uniqueClicksN">5,928</a>
+                    </th>
+                    <th>
+                        <i class="tableTitles">Opened</i><br>
+                        <a class="percentage" id="openedP">32.06%</a>
+                        <a class="actualNum" id="openedN">132,136</a>
+                    </th>
+                    <th>
+                        <i class="tableTitles">Unique Opens</i><br>
+                        <a class="percentage" id="uniqueOpensP">17.58%</a>
+                        <a class="actualNum" id="uniqueOpensN">72,434</a>
+                    </th>
+                </tr>
+            </table>
+            <div id="popupWin" class="popup">
+                <div class="popupContent" id="popupView">
+                    <div class="popupTop">
+                        <a style="color: black;">Emails</a>
+                        <span id="closeX" class="close">X</span>
+                    </div>
+                    <br>
+                    <div style="text-align: center; overflow: auto;">
+                        <p id="emailList">email@email.com</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <footer>
+            <img class="logo" src="Images/Keyglee Dispo Logo.png" alt="KeyGlee Logo" width="100" height="93">
+            <div style="display: flex; flex-direction: row; width: 55%;">
+                <a href="stats.html" class="foot">
+                <h3>Home</h3>
+                </a>
+                <h3 class="foot">|</h3>
+                <a href="https://theglobalsystemsolutions.itclientportal.com/ClientPortal/LandingPage/LandingPage.aspx?fromLogin=1" target="blank" class="foot">
+                    <h3>IT Support</h3>
+                </a>
+                <h3 class="foot">|</h3>
+                <a href="#" class="foot">
+                    <h3>About Us</h3>
+                </a>
+                <h3 class="foot">|</h3>
+                <a href="#" class="foot">
+                    <h3>Contact Us</h3>
+                </a>
+                <h3 class="foot">|</h3>
+                <a href="#" class="foot">
+                    <h3>Terms and Conditions</h3>
+                </a>
+            </div>
+            <ul class="socialList">
+                <li><a href="https://www.instagram.com/keygleedispo/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></div></li>
+                <li><a href="https://www.facebook.com/keygleedispo"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/keygleedispo"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            </ul>
+        </footer>
+        <script type="text/javascript" src="stats.js"></script>
+    </body>
+</html>
