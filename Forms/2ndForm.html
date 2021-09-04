@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check Form</title>
+        <link rel="stylesheet" href="2ndForm.css">
+    </head>
+    <body>
+        <!--Property Address-->
+        <div class="flex-container">
+            <h3>Property Address:</h3>
+            <label class="centerLabel">Full Address: Street, City, State, Zip</label>
+            <forms><input type="text" placeholder="Enter Property Address" class="flex-item" id="propertyAddress" disabled></forms>
+            <div id="propertyAddressRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="propertyAddressText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="propertyAddressSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="propertyAddressCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="propertyAddressAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="propertyAddressReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Buyer-->
+        <div class="flex-container">
+            <h3>Is the Buyer a:</h3>
+            <label class="leftLabel">Select an option</label>
+            <forms class="offerButtons">
+                <label class="radioButton" id="radioWholesaler">
+                    <input type="radio" id="wholesaler" style="margin: 10px" name="Buyer" disabled>Wholesaler
+                </label>
+                <label class="radioButton" id="radioAgent">
+                    <input type="radio" id="agent" style="margin: 10px" name="Buyer" disabled>Agent
+                </label>
+                <label class="radioButton" id="radioInvestor">
+                    <input type="radio" id="investor" style="margin: 10px" name="Buyer" disabled>Investor
+                    </label>
+            </forms>
+            <div id="buyerRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="buyerText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="buyerSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="buyerCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="buyerAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="buyerReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Double Escrow-->
+        <div class="flex-container">
+            <h3>Double Escrow?:</h3>
+            <label class="centerLabel">Are we double closing?</label>
+            <forms class="offerButtons">
+                <label class="radioButton" id="radioEscrowYes">
+                    <input type="radio" style="margin: 10px;" name="escrow" id="escrowYes" disabled>Yes
+                </label>
+                <label class="radioButton" id="radioEscrowNo">
+                    <input type="radio" style="margin: 10px" name="escrow" id="escrowNo" disabled>No
+                <label>
+            </forms>
+            <div id="escrowRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="escrowText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="escrowSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="escrowCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="escrowAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="escrowReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Title Company-->
+        <div class="flex-container">
+            <h3>Title Company/Attorney:</h3>
+            <label class="leftLabel">Type a description</label>
+            <forms><input type="text" class="flex-item" id="titleComp" disabled></forms>
+            <div id="titleCompanyRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="titleCompanyText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="titleCompanySubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="titleCompanyCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="titleCompanyAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="titleCompanyReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Title Officer's Name-->
+        <div class="flex-container">
+            <h3>Title Officer's Name:</h3>
+            <label class="leftLabel">Type a description</label>
+            <forms><input type="text" class="flex-item" id="titleOfficer" disabled></forms>
+            <div id="titleOfficerNameRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="titleOfficerNameText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="titleOfficerNameSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="titleOfficerNameCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="titleOfficerNameAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="titleOfficerNameReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Title Company's Email-->
+        <div id="emailBox" class="flex-container">
+            <h3>Title Company Email:</h3>
+            <label class="leftLabel">Type a description</label>
+            <forms><input type="text" placeholder="example@example.com" class="flex-item" id="titleEmail" disabled></forms>
+            <div id="titleCompanyEmailRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="titleCompanyEmailText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="titleCompanyEmailSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="titleCompanyEmailCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="titleCompanyEmailAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="titleCompanyEmailReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Title Company's Phone Number-->
+        <div class="flex-container">
+            <h3>Title Company's Phone Number:</h3>
+            <label class="leftLabel">Type a description</label>
+            <forms style="margin-bottom: 0%; margin-top: 1%">
+                <forms><input type="text" class="flex-item" placeholder="(123)-456-7890" id="compNum" disabled></forms>
+            </forms>
+            <div id="titleCompanyNumberRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="titleCompanyNumberText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="titleCompanyNumberSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="titleCompanyNumberCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="titleCompanyNumberAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="titleCompanyNumberReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Signer's Name-->
+        <div class="flex-container">
+            <h3>Signer's Name:</h3>
+            <label class="centerLabel">Name of the buyer signing the contract</label>
+            <forms><input type="text" class="flex-item" id="signerName" disabled></forms>
+            <div id="signerNameRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="signerNameText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="signerNameSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="signerNameCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="signerNameAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="signerNameReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Vesting-->
+        <div class="flex-container">
+            <h3>Vesting:</h3>
+            <label class="centerLabel">Name of the person or company who is buying the property</label>
+            <forms><input type="text" class="flex-item" id="vester" disabled></forms>
+            <div id="vestingRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="vestingText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="vestingSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="vestingCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="vestingAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="vestingReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Contract Price-->
+        <div class="flex-container">
+            <h3>Contract Price:</h3>
+            <label class="centerLabel">The price buyer is purchasing at</label>
+            <forms><input type="text" class="flex-item" id="contractPrice" value="$" disabled></forms>
+            <div id="contractPriceRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="contractPriceText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="contractPriceSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="contractPriceCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="contractPriceAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="contractPriceReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--EMD-->
+        <div class="flex-container">
+            <h3>EMD:</h3>
+            <label class="centerLabel">Earnest Money Deposit Account</label>
+            <forms><input type="text" class="flex-item" id="EMD" value="$" disabled></forms>
+            <div id="EMDRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="EMDText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="EMDSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="EMDCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="EMDAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="EMDReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Closing costs-->
+        <div class="flex-container">
+            <h3>Are we paying closing costs?:</h3>
+            <label class="leftLabel">Choose an option</label>
+            <forms class="offerButtons">
+                <label class="radioButton" id="radioPayingClosingYes">
+                    <input type="radio" style="margin: 10px;" name="closing" id="closeYes" disabled>Yes
+                </label>
+                <label class="radioButton" id="radioPayingClosingNo">
+                    <input type="radio" style="margin: 10px" name="closing" id="closeNo" disabled> No
+                </label>
+            </forms>
+            <div id="payingClosingRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="payingClosingText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="payingClosingSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="payingClosingCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="payingClosingAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="payingClosingReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Close of Escrow-->
+        <div class="flex-container">
+            <h3>Close of Escrow:</h3>
+            <label class="leftLabel">Type a description</label>
+            <forms><input type="date" id="closeEscrow" disabled></forms> <br>
+            <div id="closeEscrowRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="closeEscrowText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="closeEscrowSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="closeEscrowCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="closeEscrowAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="closeEscrowReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Closing Sooner-->
+        <div class="flex-container">
+            <h3>Possibility of closing sooner?:</h3>
+            <label class="leftLabel">Choose an option</label>
+            <forms class="offerButtons">
+                <label class="radioButton" id="radioCloseSoonerYes">
+                    <input type="radio" style="margin: 10px;" name="sooner" id="closeSoonerYes" disabled> Yes
+                </label>
+                <label class="radioButton" id="radioCloseSoonerNo">
+                    <input type="radio" style="margin: 10px" name="sooner" id="closeSoonerNo" disabled> No
+                </label>
+            </forms>
+            <div id="closeSoonerRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="closeSoonerText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="closeSoonerSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="closeSoonerCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="closeSoonerAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="closeSoonerReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Contract Executed date-->
+        <div class="flex-container">
+            <h3>Contract Executed Date:</h3>
+            <label class="centerLabel">Today's Date</label>
+            <forms><input type="date" id="exeEscrow" disabled></forms> <br>
+            <div id="executeEscrowRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="executeEscrowText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="executeEscrowSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="executeEscrowCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="executeEscrowAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="executeEscrowReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Buyer's Number-->
+        <div class="flex-container">
+            <h3>Buyer's Phone Number:</h3>
+            <label class="leftLabel">Type a description</label>
+            <forms style="margin-bottom: 0%; margin-top: 1%">
+                <forms><input type="text" class="flex-item" placeholder="(123)-456-7890" maxlength="16" id="buyNum" disabled></forms>
+            </forms>
+            <div id="buyerNumberRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="buyerNumberText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="buyerNumberSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="buyerNumberCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="buyerNumberAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="buyerNumberReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Docusign Email-->
+        <div class="flex-container">
+            <h3>Docusign Email:</h3>
+            <label class="centerLabel">Email for buyer/signer</label>
+            <forms><input type="text" id="docusign" placeholder="example@example.com" class="flex-item" disabled></forms>
+            <div id="docusignRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="docusignText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="docusignSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="docusignCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="docusignAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="docusignReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+
+        <!--Your Name-->
+        <div class="flex-container">
+            <h3>Your Name:</h3>
+            <label class="leftLabel">Type a description</label>
+            <forms><input type="text" class="flex-item" id="username" disabled></forms>
+            <div id="usernameRejection" style="display: none;">
+                <div class="rejectionBox">
+                    <textarea id="usernameText" placeholder="Rejection Reason"></textarea>
+                    <div style="width: 100%;">
+                        <input type="button" id="usernameSubmit" class="rejectionButton" value="Submit">
+                        <input type="button" id="usernameCancel" class="rejectionButton" value="Cancel">
+                    </div>
+                </div>
+            </div>
+            <div class="blueBox">
+                <div class="blueButtonGroup">
+                    <input type="button" id="usernameAccept" class="blueAccept" value="Accept">
+                    <input type="button" id="usernameReject" class="blueReject" value="Reject">
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript" src="2ndForm.js"></script>
+    </body>
+</html>
