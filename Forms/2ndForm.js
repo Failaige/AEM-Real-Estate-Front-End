@@ -1,7 +1,3 @@
-//gets information from csv
-
-//I added a print out of the contents of the form if the checker presses the 'Accept' button.
-//The border will automatically turn red if the form field is empty when the checker presses accept.
 /*
 -----------------------------------------------------------------------------------------------------------------------------
 Property Address
@@ -31,7 +27,7 @@ document.getElementById("propertyAddressAccept").addEventListener("click", funct
         propertyAddress.style.borderColor = "Green";
         console.log(propertyAddress.value); //prints out the contents of the property addr
     }
-    else { //if there is nothing in the textfield, it will automatically turn red
+    else {
         propertyAddress.style.borderColor = "Red";
     }
 })
@@ -84,7 +80,7 @@ document.getElementById("buyerAccept").addEventListener("click", function() {
     else if (investor.checked) {
         console.log("Investor");
     }
-    else { //if none of the options are checked then the borders are turned red
+    else {
         radioWholesaler.style.borderColor = "Red";
         radioAgent.style.borderColor = "Red";
         radioInvestor.style.borderColor = "Red";
@@ -124,14 +120,14 @@ document.getElementById("escrowCancel").addEventListener("click", function() {
 document.getElementById("escrowAccept").addEventListener("click", function() {
     radioEscrowYes.style.borderColor = "Green";
     radioEscrowNo.style.borderColor = "Green";
-    //prints out the chosen double escrow option
+    //prints out the chosen buyer option if one has been chosen
     if (escrowYes.checked) {
         console.log("Yes, Escrow");
     }
     else if (escrowNo.checked) {
         console.log("No, Escrow");
     }
-    else { //if nothing is checked, then it will change the border to red
+    else {
         radioEscrowYes.style.borderColor = "Red";
         radioEscrowNo.style.borderColor = "Red";
     }
@@ -165,9 +161,9 @@ document.getElementById("titleCompanyCancel").addEventListener("click", function
 document.getElementById("titleCompanyAccept").addEventListener("click", function() {
     if (titleCompany.value.length > 0) {
         titleCompany.style.borderColor = "Green";
-        console.log(titleCompany.value); //prints out the title company/attorney
+        console.log(titleCompany.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         titleCompany.style.borderColor = "Red";
     }
 })
@@ -200,9 +196,9 @@ document.getElementById("titleOfficerNameCancel").addEventListener("click", func
 document.getElementById("titleOfficerNameAccept").addEventListener("click", function() {
     if (titleOfficerName.value.length > 0) {
         titleOfficerName.style.borderColor = "Green";
-        console.log(titleOfficerName.value); //prints out the title officer's name
+        console.log(titleOfficerName.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         titleOfficerName.style.borderColor = "Red";
     }
 })
@@ -212,8 +208,29 @@ document.getElementById("titleOfficerNameAccept").addEventListener("click", func
 Title Company's Email
 -----------------------------------------------------------------------------------------------------------------------------
 */
+//obtain and log title company's email
+//ensure proper formatting
 var titleCompanyEmailRejection = document.getElementById("titleCompanyEmailRejection");
 var titleCompanyEmail = document.getElementById("titleEmail");
+titleCompanyEmail.addEventListener("keypress", titleCompEmail);
+titleCompanyEmail.addEventListener("keydown", removeRed); //keypress doesn't detect backspace, so I have this to hopefully detect all other key inputs
+let regexpr1 = new RegExp('\\S+@\\S+.com');
+
+//im not sure what to do if the inputted format is wrong
+function titleCompEmail(e) {
+    titleCompanyEmail.style.borderColor = "black";
+    if (e.key === "Enter") {
+        if (regexpr1.test(titleCompanyEmail.value) == false) {
+            //I'm not sure if you want to alert the user as well
+            //alert("Please enter a valid email format.");
+            titleCompanyEmail.style.borderColor = "red";
+        }
+    }
+}
+//this is to turn the border back to white
+function removeRed() {
+    titleCompanyEmail.style.borderColor = "black";
+}
 
 //if the user presses the reject button
 document.getElementById("titleCompanyEmailReject").addEventListener("click", function() {
@@ -236,9 +253,9 @@ document.getElementById("titleCompanyEmailCancel").addEventListener("click", fun
 document.getElementById("titleCompanyEmailAccept").addEventListener("click", function() {
     if (titleCompanyEmail.value.length > 0) {
         titleCompanyEmail.style.borderColor = "Green";
-        console.log(titleCompanyEmail.value); //prints out the title company's email
+        console.log(titleCompanyEmail.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         titleCompanyEmail.style.borderColor = "Red";
     }
 })
@@ -248,8 +265,37 @@ document.getElementById("titleCompanyEmailAccept").addEventListener("click", fun
 Title Officer's Phone Number
 -----------------------------------------------------------------------------------------------------------------------------
 */
+//obtain and log title company's phone number
 var titleCompanyNumberRejection = document.getElementById("titleCompanyNumberRejection");
 var titleCompanyNumber = document.getElementById("compNum");
+titleCompanyNumber.addEventListener("input", companyNumber);
+titleCompanyNumber.addEventListener("keydown", maxPhoneNumber);
+let regexpr0 = /\D/g
+
+//123-123-1234 <-- I went with this format for the number, I wasn't sure what country code I should've accounted for
+function companyNumber(e) {
+    let cNum = titleCompanyNumber.value.replace(regexpr0, "");
+    if (cNum.length < 3) {
+        titleCompanyNumber.value = cNum.substring(0);
+    }
+    else if (3 < cNum.length && cNum.length <= 6) {
+        titleCompanyNumber.value = "(" + cNum.substring(0,3) + ")" + "-" + cNum.substring(3);
+    }
+    else if (7 <= cNum.length) {
+        titleCompanyNumber.value = "(" + cNum.substring(0,3) + ")" + "-" + cNum.substring(3, 6) + "-" + cNum.substring(6);
+    }
+}
+//limits the max length of the phone number
+function maxPhoneNumber(e) {
+    let rawNumbers = titleCompanyNumber.value.replace(regexpr0, "");
+    if (rawNumbers.length > 9 && e.key != "Backspace") {
+        e.preventDefault();
+    }
+    /*
+    if (e.key === "Enter" && titleCompanyNumber.value.length === 14) {
+        console.log(titleCompanyNumber.value);
+    }*/
+}
 
 //if the user presses the reject button
 document.getElementById("titleCompanyNumberReject").addEventListener("click", function() {
@@ -272,9 +318,9 @@ document.getElementById("titleCompanyNumberCancel").addEventListener("click", fu
 document.getElementById("titleCompanyNumberAccept").addEventListener("click", function() {
     if (titleCompanyNumber.value.length > 0) {
         titleCompanyNumber.style.borderColor = "Green";
-        console.log(titleCompanyNumber.value); //prints out the title officer's phone number
+        console.log(titleCompanyNumber.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         titleCompanyNumber.style.borderColor = "Red";
     }
 })
@@ -307,9 +353,9 @@ document.getElementById("signerNameCancel").addEventListener("click", function()
 document.getElementById("signerNameAccept").addEventListener("click", function() {
     if (signerName.value.length > 0) {
         signerName.style.borderColor = "Green";
-        console.log(signerName.value); //prints out the signer's name
+        console.log(signerName.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         signerName.style.borderColor = "Red";
     }
 })
@@ -342,9 +388,9 @@ document.getElementById("vestingCancel").addEventListener("click", function() {
 document.getElementById("vestingAccept").addEventListener("click", function() {
     if (vesting.value.length > 0) {
         vesting.style.borderColor = "Green";
-        console.log(vesting.value); //prints out the name of the person buying
+        console.log(vesting.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         vesting.style.borderColor = "Red";
     }
 })
@@ -354,8 +400,46 @@ document.getElementById("vestingAccept").addEventListener("click", function() {
 Contract Price
 -----------------------------------------------------------------------------------------------------------------------------
 */
+//obtain and log contract price
+//automatically formats the numbers as the user types
+//I am sure I missed some checks and edge cases, but I cannot think of any right now
 var contractPriceRejection = document.getElementById("contractPriceRejection");
 var contractPrice = document.getElementById("contractPrice");
+contractPrice.addEventListener("input", contPrice);
+contractPrice.addEventListener("keypress", printContPrice);
+var currencyFormat = new Intl.NumberFormat('en-US', {maximumFractionDigits: 2});
+let regexpr2 = /[A-Za-z$,]+/g;
+
+function contPrice(e) {
+    //checks to see if it is empty or contains only the $ sign and sets it to a default 0
+    if (contractPrice.value === "" || contractPrice.value === "$") {
+        contractPrice.value = 0;
+        //to ensure that the default $0 remains
+        contractPrice.value = currencyFormat.format(parseFloat(contractPrice.value));
+        contractPrice.value = "$" + contractPrice.value;
+    }
+    let last = contractPrice.value.slice(-1);
+    if (e.data != "." && last != "." && last != "0") {
+        contractPrice.value = contractPrice.value.replace(regexpr2, ""); //removes all letters, $'s, and commas
+        contractPrice.value = currencyFormat.format(parseFloat(contractPrice.value)); //uses the Intl.NumberFormat to format the number according to US number standards to only 2 decimal places.
+        contractPrice.value = "$" + contractPrice.value; //simply concatenates the $ to the front of the number
+    }
+}
+function printContPrice(e) {
+    /*
+    if (e.key === "Enter") {
+        //ensures that the number is properly formatted before being displayed to console.
+        contractPrice.value = contractPrice.value.replace(regexpr2, "");
+        contractPrice.value = currencyFormat.format(parseFloat(contractPrice.value));
+        contractPrice.value = "$" + contractPrice.value;
+        console.log(contractPrice.value);
+    }*/
+    //prevents users from spamming periods
+    let period = contractPrice.value.search(/\./);
+    if (period != -1 && e.key === ".") {
+        e.preventDefault();
+    }
+}
 
 //if the user presses the reject button
 document.getElementById("contractPriceReject").addEventListener("click", function() {
@@ -378,9 +462,9 @@ document.getElementById("contractPriceCancel").addEventListener("click", functio
 document.getElementById("contractPriceAccept").addEventListener("click", function() {
     if (contractPrice.value.length > 0) {
         contractPrice.style.borderColor = "Green";
-        console.log(contractPrice.value); //prints out the contract price
+        console.log(contractPrice.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         contractPrice.style.borderColor = "Red";
     }
 })
@@ -390,8 +474,41 @@ document.getElementById("contractPriceAccept").addEventListener("click", functio
 EMD
 -----------------------------------------------------------------------------------------------------------------------------
 */
+//obtain and log EMD
 var EMDRejection = document.getElementById("EMDRejection");
 var EMD = document.getElementById("EMD");
+EMD.addEventListener("input", earnestPrice);
+EMD.addEventListener("keypress", printearnestPrice);
+
+function earnestPrice(e) {
+    //checks to see if it is empty or contains only the $ sign and sets it to a default 0
+    if (EMD.value === "" || EMD.value === "$") {
+        EMD.value = 0;
+        //to ensure that the default $0 remains
+        EMD.value = currencyFormat.format(parseFloat(EMD.value));
+        EMD.value = "$" + EMD.value;
+    }
+    let last0 = EMD.value.slice(-1);
+    if (e.data != "." && last0 != "." && last0 != "0") {
+        EMD.value = EMD.value.replace(regexpr2, ""); //removes all letters, $'s, and commas
+        EMD.value = currencyFormat.format(parseFloat(EMD.value)); //uses the Intl.NumberFormat to format the number according to US number standards to only 2 decimal places.
+        EMD.value = "$" + EMD.value; //simply concatenates the $ to the front of the number
+    }
+}
+function printearnestPrice(e) {
+    if (e.key === "Enter") {
+        //ensures that the number is properly formatted before being displayed to console.
+        EMD.value = EMD.value.replace(regexpr2, "");
+        EMD.value = currencyFormat.format(parseFloat(EMD.value));
+        EMD.value = "$" + EMD.value;
+        console.log(EMD.value);
+    }
+    //prevents users from spamming periods
+    let period = EMD.value.search(/\./);
+    if (period != -1 && e.key === ".") {
+        e.preventDefault();
+    }
+}
 
 //if the user presses the reject button
 document.getElementById("EMDReject").addEventListener("click", function() {
@@ -414,9 +531,9 @@ document.getElementById("EMDCancel").addEventListener("click", function() {
 document.getElementById("EMDAccept").addEventListener("click", function() {
     if (EMD.value.length > 0) {
         EMD.style.borderColor = "Green";
-        console.log(EMD.value); //prints out the EMD
+        console.log(EMD.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         EMD.style.borderColor = "Red";
     }
 })
@@ -454,14 +571,14 @@ document.getElementById("payingClosingCancel").addEventListener("click", functio
 document.getElementById("payingClosingAccept").addEventListener("click", function() {
     radioPayingClosingYes.style.borderColor = "Green";
     radioPayingClosingNo.style.borderColor = "Green";
-    //prints out the chosen closing cost option
+    //prints out the chosen buyer option if one has been chosen
     if (payingClosingYes.checked) {
         console.log("Yes, Paying Closing");
     }
     else if (payingClosingNo.checked) {
         console.log("No, Paying Closing");
     }
-    else { //if none of choices are checked then the border becomes red
+    else {
         radioPayingClosingYes.style.borderColor = "Red";
         radioPayingClosingNo.style.borderColor = "Red";
     }
@@ -472,6 +589,16 @@ document.getElementById("payingClosingAccept").addEventListener("click", functio
 Close of Escrow
 -----------------------------------------------------------------------------------------------------------------------------
 */
+/*
+//obtain and log escrow close date
+const closeEscrow = document.getElementById("closeEscrow");
+//I have it so once the user clicks out of the box, it sends to console. This lets the user manually input or use the calendar popup
+closeEscrow.addEventListener("blur", closeEsc); 
+
+function closeEsc(e) {
+    console.log(closeEscrow.value);
+}*/
+
 var closeEscrowRejection = document.getElementById("closeEscrowRejection");
 var closeEscrow = document.getElementById("closeEscrow");
 //if the user presses the reject button
@@ -495,9 +622,9 @@ document.getElementById("closeEscrowCancel").addEventListener("click", function(
 document.getElementById("closeEscrowAccept").addEventListener("click", function() {
     if (closeEscrow.value.length > 0) {
         closeEscrow.style.borderColor = "Green";
-        console.log(closeEscrow.value); //prints out the date of the escrow close
+        console.log(closeEscrow.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         closeEscrow.style.borderColor = "Red";
     }
 })
@@ -535,14 +662,14 @@ document.getElementById("closeSoonerCancel").addEventListener("click", function(
 document.getElementById("closeSoonerAccept").addEventListener("click", function() {
     radioCloseSoonerYes.style.borderColor = "Green";
     radioCloseSoonerNo.style.borderColor = "Green";
-    //prints out the chosen close sooner option
+    //prints out the chosen buyer option if one has been chosen
     if (closeSoonerYes.checked) {
         console.log("Yes, Closing Sooner");
     }
     else if (closeSoonerNo.checked) {
         console.log("No, Closing Sooner");
     }
-    else { //if none of the choices are checked then the border becomes red
+    else {
         radioCloseSoonerYes.style.borderColor = "Red";
         radioCloseSoonerNo.style.borderColor = "Red";
     }
@@ -553,6 +680,16 @@ document.getElementById("closeSoonerAccept").addEventListener("click", function(
 Contract Executed Date
 -----------------------------------------------------------------------------------------------------------------------------
 */
+/*
+//obtain and log escrow executed date
+const exeEscrow = document.getElementById("exeEscrow");
+//I have it so once the user clicks out of the box, it sends to console. This lets the user manually input or use the calendar popup
+exeEscrow.addEventListener("blur", exeEsc);
+
+function exeEsc(e) {
+    console.log(exeEscrow.value);
+}*/
+
 var executeEscrowRejection = document.getElementById("executeEscrowRejection");
 var executeEscrow = document.getElementById("exeEscrow");
 //if the user presses the reject button
@@ -576,9 +713,9 @@ document.getElementById("executeEscrowCancel").addEventListener("click", functio
 document.getElementById("executeEscrowAccept").addEventListener("click", function() {
     if (executeEscrow.value.length > 0) {
         executeEscrow.style.borderColor = "Green";
-        console.log(executeEscrow.value); //prints out the current date the form was made
+        console.log(executeEscrow.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         executeEscrow.style.borderColor = "Red";
     }
 })
@@ -591,6 +728,32 @@ Buyer's Phone Number
 //obtain and log buyer's phone number
 var buyerNumberRejection = document.getElementById("buyerNumberRejection");
 var buyerNumber = document.getElementById("buyNum");
+buyerNumber.addEventListener("input", buyNumber);
+buyerNumber.addEventListener("keydown", maxBuyNumber);
+
+//123-123-1234 <-- I went with this format for the number, I wasn't sure what country code I should've accounted for
+function buyNumber(e) {
+    let bNum = buyerNumber.value.replace(regexpr0, "");
+    if (bNum.length === 3) {
+        buyerNumber.value = bNum.substring(0);
+    }
+    else if (3 < bNum.length && bNum.length <= 6) {
+        buyerNumber.value = "(" + bNum.substring(0,3) + ")" + "-" + bNum.substring(3);
+    }
+    else if (7 <= bNum.length) {
+        buyerNumber.value = "(" + bNum.substring(0,3) + ")" + "-" + bNum.substring(3, 6) + "-" + bNum.substring(6);
+    }
+}
+//limits the max length of the phone number
+function maxBuyNumber(e) {
+    let rawBuy = buyerNumber.value.replace(regexpr0, "");
+    if (rawBuy.length > 9 && e.key != "Backspace") {
+        e.preventDefault();
+    }
+    if (e.key === "Enter" && buyerNumber.value.length === 14) {
+        console.log(buyerNumber.value);
+    }
+}
 
 //if the user presses the reject button
 document.getElementById("buyerNumberReject").addEventListener("click", function() {
@@ -614,9 +777,9 @@ document.getElementById("buyerNumberCancel").addEventListener("click", function(
 document.getElementById("buyerNumberAccept").addEventListener("click", function() {
     if (buyerNumber.value.length > 0) {
         buyerNumber.style.borderColor = "Green";
-        console.log(buyerNumber.value); //prints out the buyer's phone number
+        console.log(buyerNumber.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         buyerNumber.style.borderColor = "Red";
     }
 })
@@ -629,6 +792,28 @@ Docusign Email
 //obtain and log docusign email
 var docusignRejection = document.getElementById("docusignRejection");
 var docusign = document.getElementById("docusign");
+docusign.addEventListener("keypress", docusignEmail);
+docusign.addEventListener("keydown", removeRedDocusign); //keypress doesn't detect backspace, so I have this to hopefully detect all other key inputs
+
+//im not sure what to do if the inputted format is wrong
+function docusignEmail(e) {
+    docusign.style.borderColor = "black";
+    if (e.key === "Enter") {
+        if (regexpr1.test(docusign.value)) {
+            console.log(docusign.value);
+        }
+        else {
+            //I'm not sure if you want to alert the user as well
+            //alert("Please enter a valid email format.");
+            docusign.style.borderColor = "red";
+        }
+    }
+}
+//this is to turn the border back to white
+function removeRedDocusign() {
+    docusign.style.borderColor = "black";
+    docusign.style.color = "black";
+}
 
 //if the user presses the reject button
 document.getElementById("docusignReject").addEventListener("click", function() {
@@ -651,9 +836,9 @@ document.getElementById("docusignCancel").addEventListener("click", function() {
 document.getElementById("docusignAccept").addEventListener("click", function() {
     if (docusign.value.length > 0) {
         docusign.style.borderColor = "Green";
-        console.log(docusign.value); //prints out the docusign email for the buyer/signer
+        console.log(docusign.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         docusign.style.borderColor = "Red";
     }
 })
@@ -686,9 +871,9 @@ document.getElementById("usernameCancel").addEventListener("click", function() {
 document.getElementById("usernameAccept").addEventListener("click", function() {
     if (username.value.length > 0) {
         username.style.borderColor = "Green";
-        console.log(username.value); //prints out name
+        console.log(username.value); //prints out the contents of the property addr
     }
-    else { //if the form is empty then the border becomes red
+    else {
         username.style.borderColor = "Red";
     }
 })
