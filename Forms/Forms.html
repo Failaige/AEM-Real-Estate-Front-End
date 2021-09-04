@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+    <head>
+        <title>WELCOME PAGE</title>
+        <link rel="stylesheet" href="Forms.css">
+    </head>
+
+    <!--
+        boxHeader is used for the question itself.
+        flex-container will be the box that holds the questions and answers.
+        flex-item will be the text input forms.
+        offerButtons formats the buttons together as one.
+        radioButton is for the individual buttons.
+        blueBox is just the blue decorational box at the bottom.
+    -->
+    <!--
+        Some issues with text centering, the textarea needs to be resized
+    -->
+    <body>
+        <!--Code for your full name-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Your Full Name:</h3>
+            <label>Type a description</label>
+            <forms><input type="text" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for written offer-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Written Offer:</h3>
+            <label>Select an option</label>
+            <forms class="offerButtons">
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Yes - we need to write the contract</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">No - agent is writing the contract</input>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for who is supplier-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Who is the supplier:</h3>
+            <label>Select an option</label>
+            <forms class="offerButtons">
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Direct to seller</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Wholesaler</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Agent</input>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for name of supplier-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Name of Supplier/Agent:</h3>
+            <label>Type a description</label>
+            <forms><input type="text" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for supplier's email-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Supplier's Email:</h3>
+            <label>Type a description</label>
+            <forms><input type="text" placeholder="example@example.com" style="display: flex; margin: 1.3% 0% 0% 2%; width: 95%; height: 30px;"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for supplier's phone number-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Supplier's Phone Number:</h3>
+            <label>Type a description</label>
+            <forms style="margin-bottom: 0%; margin-top: 1%">
+                <input type="text" placeholder="Area Code" style="width: 10%; height: 30px; margin-right: 2%;">
+                <input type="text" placeholder="Phone Number" style="width: 50%; height: 30px;">
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for property address-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Property Address:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">Full Address, City, State, Zip</label>
+            <forms><input type="text" placeholder="Enter a Location" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for ARV-->
+        <div class="flex-container">
+            <h3 class="boxHeader">ARV:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">After Repair Value</label>
+            <forms><input type="text" value="$" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for et price-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Net Price:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">What are you looking this up at?</label>
+            <forms><input type="text" value="$" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for sale price expectation-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Sale Price Expectation:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">What is the price we plan to market this at?</label>
+            <forms><input type="text" value="$" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for earnest money deposit-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Earnest Money Desposit:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">What is the EMD amount?</label>
+            <forms><input type="text" value="$" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for option fee-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Option Fee:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">[Texas Only]</label>
+            <forms><input type="text" value="$" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for how are we splitting this deal-->
+        <div class="flex-container">
+            <h3 class="boxHeader">How are we splitting this deal with the supplier?:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">100(no split), 50/50(half)</label>
+            <forms class="offerButtons">
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">100</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">50/50</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Other</input>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for do we need JV agreement-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Do we need a JV agreement?:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">Joint Venture</label>
+            <forms class="offerButtons">
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Yes</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">No</input>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for additional cost-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Additional Cost:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">Commission, HOA fees, moving cost, etc:</label>
+            <forms><input type="text" value="$" style="display: flex; margin: 1.3% 0% 0% 2%; width: 95%; height: 30px;"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--
+            Code for paying closing cost
+            selectButton wraps the buttons to border them
+        -->
+        <div class="flex-container">
+            <h3 class="boxHeader">Are we paying closing cost?:</h3>
+            <label>Choose an option</label>
+            <forms class="offerButtons" style="justify-content: space-evenly; margin: 1.3% 15% 2% 1%;">
+                <div class="selectButton">
+                    <button style="padding: 5% 100% 5% 100%;">Yes</button>
+                </div>
+                <div class="selectButton">
+                    <button style="padding: 5% 130% 5% 130%;">No</button>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+         <!--Code for your COE-->
+         <div class="flex-container">
+            <h3 class="boxHeader">When is COE?:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">Close of Escrow Date</label>
+            <forms><input type="date" placeholder="mm-dd-yyyy" style="display: flex; margin: 1.3% 0% 0% 2%; width: 95%; height: 30px;"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for IP length-->
+        <div class="flex-container">
+            <h3 class="boxHeader">IP Length:</h3></h3>
+            <label style="text-align: center; margin-bottom: 3%;">Inspection Period Length</label>
+            <forms><input type="text" style="display: flex; margin: 1.3% 0% 0% 2%; width: 95%; height: 30px;"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for Title Company-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Title Company/Attorney Name:</h3></h3>
+            <label style="text-align: center; margin-bottom: 3%;">TBH is not a valid answer. This is required.</label>
+            <forms><input type="text" style="display: flex; margin: 1.3% 0% 0% 2%; width: 95%; height: 30px;"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for Title Officer Name-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Title Officer Name</h3>:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">TBH is not a valid answer. This is required.</label>
+            <forms><input type="text" style="display: flex; margin: 1.3% 0% 0% 2%; width: 95%; height: 30px;"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for Title Officer Email-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Title Officer Email</h3>:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">TBH is not a valid answer. This is required.</label>
+            <forms><input type="text" placeholder="example@example.com" style="display: flex; margin: 1.3% 0% 0% 2%; width: 95%; height: 30px;"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for Title Company's phone number-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Supplier's Phone Number:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">TBH is not a valid answer. This is required.</label>
+            <forms style="margin-bottom: 0%; margin-top: 1%">
+                <input type="text" placeholder="Area Code" style="width: 10%; height: 30px; margin-right: 2%;">
+                <input type="text" placeholder="Phone Number" style="width: 50%; height: 30px;">
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for type of access-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Type of Access:</h3>
+            <label>Select an option</label>
+            <forms class="offerButtons">
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">By Appointment</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Lockbox</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">No Access</input>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for post possession-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Post Possession:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">Will Owner be there after COE</label>
+            <forms class="offerButtons">
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Yes</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">No</input>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--
+            Code for lease details
+            I had to modify a specific radio button differently than the regular buttons
+        -->
+        <div class="flex-container">
+            <h3 class="boxHeader">Lease Details:</h3>
+            <label>Select an option</label>
+            <forms class="offerButtons" style="flex-wrap: wrap;">
+                <div style="
+                display: flex;
+                flex-direction: row;
+                border: 1px solid darkgray;
+                margin: 1.3% 0% 0% 2%;
+                padding: .5% 37.7% .5% 0%;
+                border-radius: 5px;
+                align-items: center;
+                font-size: 130%;">
+                    <input type="radio" style="margin: 10px">Vacant</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Tenent Occupied - Vacant @ COE</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Tenent Occupied - Wants to continue rent</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Owner Occupied - Vacant @ COE</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Other</input>
+                </div>
+                <div class="blueBox"></div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for tenant occupied, current rent-->
+        <div class="flex-container">
+            <h3 class="boxHeader">If tenant occupied, what is current rent:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">"Leave blank if no tenents present"</label>
+            <forms><input type="text" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for tenant occupied, lease term-->
+        <div class="flex-container">
+            <h3 class="boxHeader">If tenant occupied, what is lease term:</h3>
+            <label style="text-align: center;">Leave blank if no tenants present</label>
+            <label style="text-align: center; margin-bottom: 3%;">Month to month, 12 month lease, no lease</label>
+            <forms><input type="text" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for additional notes-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Additional Notes Supplier/Agent Mentioned:</h3>
+            <label>Type a description here.</label>
+            <forms>
+                <textarea rows="5" name="additional notes" placeholder="Type here...">
+                </textarea><br>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for number of bedrooms-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Number of Bedrooms:</h3>
+            <label>Type a description</label>
+            <forms><input type="text" placeholder="ex:23" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for number of baths-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Number of Baths:</h3>
+            <label>Type a description</label>
+            <forms><input type="text" placeholder="ex:23" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--
+            Code for Parking
+            Separate button class for parking
+        -->
+        <div class="flex-container">
+            <h3 class="boxHeader">Parking:</h3>
+            <label>Select an option</label>
+            <forms class="offerButtons" style="flex-wrap: wrap;">
+                <div class="parkingButton" style="padding: .5% 30% .5% 0%;">
+                    <input type="radio" style="margin: 10px">Garage</input>
+                </div>
+                <div class="parkingButton" style="padding: .5% 25% .5% 0%;">
+                    <input type="radio" style="margin: 10px">Garage - Detached</input>
+                </div>
+                <div class="parkingButton" style="padding: .5% 29.7% .5% 0%;">
+                    <input type="radio" style="margin: 10px">Carport</input>
+                </div>
+                <div class="parkingButton" style="padding: .5% 32.6% .5% 0%;">
+                    <input type="radio" style="margin: 10px">On Street</input>
+                </div>
+                <div class="parkingButton" style="padding: .5% 26.6% .5% 0%;">
+                    <input type="radio" style="margin: 10px">No Parking</input>
+                </div>
+                <div class="parkingButton" style="padding: .5% 37% .5% 0%;">
+                    <input type="radio" style="margin: 10px">N/A</input>
+                </div>
+                <div class="blueBox"></div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for pool-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Pool:</h3>
+            <label>Choose an Option</label>
+            <forms class="offerButtons">
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">Yes</input>
+                </div>
+                <div class="radioButton">
+                    <input type="radio" style="margin: 10px">No</input>
+                </div>
+            </forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for living area-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Living Area: (put Sqft)</h3>
+            <label style="text-align: center; margin-bottom: 3%;">In Sqft</label>
+            <forms><input type="text" placeholder="sqft" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for lot size-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Lot Size: (put Sqft or Acres)</h3>
+            <label style="text-align: center; margin-bottom: 3%;">In Sqft or Acres</label>
+            <forms><input type="text" placeholder="sqft" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for build year-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Year Build</h3>
+            <label>Type a Description</label>
+            <forms><input type="text" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+
+        <!--Code for pictures-->
+        <div class="flex-container">
+            <h3 class="boxHeader">Link to Picures:</h3>
+            <label style="text-align: center; margin-bottom: 3%;">Dropbox link</label>
+            <forms><input type="text" placeholder="http://" class="flex-item"></forms>
+            <div class="blueBox"></div>
+        </div>
+    </body>
+</html>
